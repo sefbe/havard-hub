@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<div class="bg-dark text-white py-4 mb-5">
+    <div class="container">
+        <h2 class="fw-bold mb-1">Available Programs & Courses</h2>
+        <p class="text-secondary mb-0">Browse through our practical training tracks</p>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row g-4">
+        <% courses.forEach(course => { %>
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100 shadow-sm course-card">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-secondary mb-2 w-fit-content align-self-start"><%= course.category %></span>
+                        <h5 class="card-title fw-bold text-dark"><%= course.title %></h5>
+                        <p class="card-text text-muted flex-grow-1 small"><%= course.description %></p>
+                        <div class="mt-3">
+                            <% if (user && user.role === 'student') { %>
+                                <a href="/profile" class="btn btn-sm btn-warning w-100 fw-bold">Enroll From Profile</a>
+                            <% } else if (!user) { %>
+                                <a href="/login" class="btn btn-sm btn-outline-primary w-100">Login to Register</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,82 @@
+<%- include('partials/header') %>
+
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- Student Information Form -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-person-lines-fill text-primary me-2"></i>My Profile</h5>
+                    <form action="/profile/update" method="POST" class="mb-3">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" name="name" class="form-control" value="<%= student.name %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" name="email" class="form-control" value="<%= student.email %>" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold">Update Profile</button>
+                    </form>
+                    <hr>
+                    <form action="/profile/delete" method="POST" onsubmit="return confirm('Are you sure you want to permanently delete your account?');">
+                        <button type="submit" class="btn btn-outline-danger w-100 btn-sm">Delete Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Registration and Enrollment -->
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-journal-check text-success me-2"></i>Enrolled Courses</h5>
+                    <% if (enrolledCourses.length === 0) { %>
+                        <div class="alert alert-info mb-0">You are not currently registered in any courses. Select from below to enroll!</div>
+                    <% } else { %>
+                        <div class="list-group">
+                            <% enrolledCourses.forEach(course => { %>
+                                <div class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold text-dark"><%= course.title %></h6>
+                                        <small class="text-muted"><%= course.category %></small>
+                                    </div>
+                                    <form action="/enroll/cancel" method="POST" class="d-inline">
+                                        <input type="hidden" name="course_id" value="<%= course.id %>">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">Cancel Enrollment</button>
+                                    </form>
+                                </div>
+                            <% }) %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <!-- Enroll Additional Courses -->
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-plus-circle text-warning me-2"></i>Register for More Courses</h5>
+                    <% if (availableCourses.length === 0) { %>
+                        <p class="text-success mb-0 fw-bold"><i class="bi bi-check-circle-fill"></i> You are registered in all available courses!</p>
+                    <% } else { %>
+                        <form action="/enroll" method="POST" class="row g-2 align-items-center">
+                            <div class="col-md-9">
+                                <select name="course_id" class="form-select" required>
+                                    <option value="" selected disabled>Select a course to enroll...</option>
+                                    <% availableCourses.forEach(course => { %>
+                                        <option value="<%= course.id %>"><%= course.title %> (<%= course.category %>)</option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-warning w-100 fw-bold">Enroll Now</button>
+                            </div>
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

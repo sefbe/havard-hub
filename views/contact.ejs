@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="fw-bold mb-2">Get in Touch with Havard Hub</h3>
+                    <p class="text-muted mb-4">Have questions about our course admissions or training schedules? Send us a message.</p>
+                    <form onsubmit="alert('Thank you! Your message has been received.'); return false;">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Message</label>
+                            <textarea class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning px-4 fw-bold">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

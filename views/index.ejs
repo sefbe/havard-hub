@@ -1,0 +1,96 @@
+<%- include('partials/header') %>
+
+<!-- Banner Section with Floating Student Background -->
+<div class="hero-banner text-center position-relative">
+    <div class="floating-bg">
+        <img src="/images/student1.jpg" class="floating-img img-1" alt="Graduated Student">
+        <img src="/images/student2.jpg" class="floating-img img-2" alt="Graduated Student">
+        <img src="/images/student3.jpg" class="floating-img img-3" alt="Graduated Student">
+        <img src="/images/student4.jpg" class="floating-img img-4" alt="Graduated Student">
+    </div>
+    <div class="container hero-content">
+        <h1 class="display-4 fw-bold mb-3">Welcome To Havard Hub</h1>
+        <p class="lead max-w-600 mx-auto text-light opacity-90">
+            Build career-ready skills in Tech, AI Engineering, Creative Media, and Skilled Vocational Trades with practical hands-on training.
+        </p>
+        <div class="mt-4">
+            <a href="/courses" class="btn btn-warning btn-lg me-2 fw-bold text-dark"><i class="bi bi-book me-1"></i> Explore Courses</a>
+            <% if (!user) { %>
+                <a href="/signup" class="btn btn-outline-light btn-lg"><i class="bi bi-person-plus me-1"></i> Get Started</a>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<!-- Graduated Students Showcase -->
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Our Certified Graduates</h2>
+        <p class="text-muted">Celebrating practical skill acquisition and student milestones at Havard Hub</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4 col-sm-6">
+            <div class="card student-card shadow-sm h-100">
+                <img src="/images/student1.jpg" class="card-img-top" alt="Hauwa'u Surray Yunus">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Hauwa'u Surray Yunus</h5>
+                    <p class="text-primary fw-semibold mb-2">Computer Application</p>
+                    <span class="badge bg-success">Certificate Awarded</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card student-card shadow-sm h-100">
+                <img src="/images/student2.jpg" class="card-img-top" alt="Muhammad Ibrahim Yusuf">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Muhammad Ibrahim Yusuf</h5>
+                    <p class="text-primary fw-semibold mb-2">Computer Application</p>
+                    <span class="badge bg-success">Certificate Awarded</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card student-card shadow-sm h-100">
+                <img src="/images/student3.jpg" class="card-img-top" alt="Himnat Ibrahim Yusuf">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Himnat Ibrahim Yusuf</h5>
+                    <p class="text-primary fw-semibold mb-2">Computer Application</p>
+                    <span class="badge bg-success">Certificate Awarded</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card student-card shadow-sm h-100">
+                <img src="/images/student4.jpg" class="card-img-top" alt="Maryam Abdulhamid">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Maryam Abdulhamid</h5>
+                    <p class="text-primary fw-semibold mb-2">Computer Application</p>
+                    <span class="badge bg-success">Certificate Awarded</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card student-card shadow-sm h-100">
+                <img src="/images/student5.jpg" class="card-img-top" alt="Adam Umar Adam">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Adam Umar Adam</h5>
+                    <p class="text-primary fw-semibold mb-2">Computer Application</p>
+                    <span class="badge bg-success">Certificate Awarded</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card student-card shadow-sm h-100">
+                <img src="/images/student6.jpg" class="card-img-top" alt="Sinan Aliyu Aliyu">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold mb-1">Sinan Aliyu Aliyu</h5>
+                    <p class="text-primary fw-semibold mb-2">Computer Application</p>
+                    <span class="badge bg-success">Certificate Awarded</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
