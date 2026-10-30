@@ -204,7 +204,7 @@ app.post('/admin/student/delete', isAdmin, async (req, res) => {
 });
 
 // Run Server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.DB_PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Havard Hub Server running on http://localhost:${PORT}`);
 });
