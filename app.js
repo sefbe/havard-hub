@@ -206,5 +206,5 @@ app.post('/admin/student/delete', isAdmin, async (req, res) => {
 // Run Server
 const PORT = process.env.DB_PORT;
 app.listen(PORT, () => {
-    console.log(`Havard Hub Server running on http://localhost:${DB_PORT}`);
+    console.log(`Havard Hub Server running on http://localhost:${PORT}`);
 });
